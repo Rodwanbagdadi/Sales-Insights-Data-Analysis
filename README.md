@@ -279,8 +279,8 @@ This formula converts USD amounts to INR using a conversion rate of 75 for consi
 
 For questions about this project or collaboration opportunities:
 
-- **GitHub**: [@yourusername](https://github.com/Rodwanbagdadi)
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/rodwanbaghdadi)
+- **GitHub**: [Rodwanbagdadi](https://github.com/Rodwanbagdadi)
+- **LinkedIn**: [rodwanbaghdadi](https://linkedin.com/in/rodwanbaghdadi)
 - **Email**: rodwanbagdadi@gmail.com
 
 ## 📄 License
