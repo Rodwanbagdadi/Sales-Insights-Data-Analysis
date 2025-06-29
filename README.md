@@ -14,7 +14,9 @@ This project demonstrates advanced data analysis and visualization techniques us
 This project follows a **project-based learning methodology**, where I coded along with a comprehensive tutorial series. This hands-on approach allowed me to:
 - Learn by doing rather than just theoretical concepts
 - Build practical skills through real-world scenarios
-- Understand the complete data analysis workflow from start to finish
+- Work with actual MySQL database for hands-on SQL experience
+- Understand the complete data analysis workflow from database to dashboard
+- Practice data extraction, transformation, and visualization techniques
 
 **Tutorial Source**: [Data Analysis with Python & Pandas - Full Course](https://www.youtube.com/watch?v=hhZ62IlTxYs&list=PLeo1K3hjS3uva8pk1FI3iK9kCOKQdz1I9&index=1&ab_channel=codebasics) by codebasics
 
@@ -39,6 +41,8 @@ This project follows a **project-based learning methodology**, where I coded alo
 - **Power Query**: Data transformation and cleaning
 - **DAX (Data Analysis Expressions)**: Custom calculations and measures
 - **Power BI Service**: Dashboard publishing and sharing
+- **MySQL Database**: Backend database for storing and managing sales data
+- **SQL**: Database queries for data extraction and analysis
 
 ## 📈 Dashboard Insights
 
@@ -81,7 +85,9 @@ This project follows a **project-based learning methodology**, where I coded alo
 ## 🔍 Data Analysis Process
 
 ### 1. Data Collection & Preparation
-- **Data Sources**: Multiple data sources including sales databases, CRM systems, and external data
+- **Data Sources**: MySQL database containing sales transactions, customer information, and product data
+- **SQL Queries**: Extracted and analyzed data using SQL queries to understand the database structure
+- **MySQL Workbench**: Used for database exploration and initial data analysis
 - **Data Cleaning**: Removed duplicates, handled missing values, and standardized formats
 - **Data Transformation**: Used Power Query to reshape and prepare data for analysis
 
@@ -123,7 +129,8 @@ Sales-Insights-Data-Analysis/
 
 ### Prerequisites
 - Microsoft Power BI Desktop (latest version)
-- Access to the data sources (if refreshing data)
+- MySQL database connection (for data refresh)
+- Basic understanding of SQL queries (optional, for data exploration)
 
 ### Installation & Setup
 1. **Clone the repository**
@@ -201,9 +208,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Thanks to the data sources that made this analysis possible
+- **codebasics**: Special thanks for the comprehensive tutorial series and providing the MySQL database for hands-on learning
+- Thanks to the MySQL database that provided real-world sales data for analysis
 - Microsoft Power BI community for guidance and best practices
-- Business stakeholders for their valuable feedback and requirements
+- SQL and database community for query optimization techniques
 
 ---
 
