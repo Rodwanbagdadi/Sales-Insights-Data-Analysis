@@ -149,6 +149,87 @@ Sales-Insights-Data-Analysis/
    - Use filters and slicers for detailed analysis
    - Interact with visualizations for drill-down insights
 
+## 🗄️ Database Setup & SQL Analysis
+
+### MySQL Database Installation
+
+1. **Install MySQL on your local computer**
+   - Follow the step-by-step instructions in this tutorial: [MySQL Installation Guide](https://www.youtube.com/watch?v=WuBcTJnIuzo)
+
+2. **Import Database**
+   - Download the `db_dump.sql` file from the tutorial resources
+   - Import it to your local MySQL server as shown in the tutorial video
+
+### 📊 SQL Queries for Data Analysis
+
+Below are the key SQL queries I used to explore and analyze the sales data:
+
+#### Basic Data Exploration
+```sql
+-- Show all customer records
+SELECT * FROM customers;
+
+-- Show total number of customers
+SELECT count(*) FROM customers;
+```
+
+#### Market-Specific Analysis
+```sql
+-- Show transactions for Chennai market (market code: Mark001)
+SELECT * FROM transactions WHERE market_code='Mark001';
+
+-- Show distinct product codes sold in Chennai
+SELECT DISTINCT product_code FROM transactions WHERE market_code='Mark001';
+```
+
+#### Currency Analysis
+```sql
+-- Show transactions where currency is US dollars
+SELECT * FROM transactions WHERE currency="USD";
+```
+
+#### Time-Based Analysis
+```sql
+-- Show transactions in 2020 with date information
+SELECT transactions.*, date.* 
+FROM transactions 
+INNER JOIN date ON transactions.order_date=date.date 
+WHERE date.year=2020;
+
+-- Show total revenue in 2020
+SELECT SUM(transactions.sales_amount) 
+FROM transactions 
+INNER JOIN date ON transactions.order_date=date.date 
+WHERE date.year=2020 AND (transactions.currency="INR\r" OR transactions.currency="USD\r");
+
+-- Show total revenue in January 2020
+SELECT SUM(transactions.sales_amount) 
+FROM transactions 
+INNER JOIN date ON transactions.order_date=date.date 
+WHERE date.year=2020 AND date.month_name="January" 
+AND (transactions.currency="INR\r" OR transactions.currency="USD\r");
+
+-- Show total revenue in 2020 for Chennai
+SELECT SUM(transactions.sales_amount) 
+FROM transactions 
+INNER JOIN date ON transactions.order_date=date.date 
+WHERE date.year=2020 AND transactions.market_code="Mark001";
+```
+
+### 🔧 Power BI Data Transformation
+
+#### Currency Normalization
+To handle multiple currencies in the analysis, I created a normalized amount column using Power Query:
+
+```m
+= Table.AddColumn(#"Filtered Rows", "norm_amount", 
+  each if [currency] = "USD" or [currency] ="USD#(cr)" 
+  then [sales_amount]*75 
+  else [sales_amount], type any)
+```
+
+This formula converts USD amounts to INR using a conversion rate of 75 for consistent analysis.
+
 ## 📋 Dashboard Pages
 
 ### 🏠 Home Dashboard
